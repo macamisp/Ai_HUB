@@ -29,6 +29,8 @@ app.use('/api/', apiLimiter);
 
 // Routes
 app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/ai', require('./routes/ai.routes'));
+app.use('/api/user', require('./routes/user.routes'));
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -49,6 +51,8 @@ app.get('/', (req, res) => {
         endpoints: {
             health: '/health',
             auth: '/api/auth',
+            ai: '/api/ai',
+            user: '/api/user',
             documentation: '/api/docs (coming soon)'
         }
     });
